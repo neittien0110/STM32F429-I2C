@@ -6,10 +6,20 @@ STM32 có sẵn __3 bộ driver điều khiển I2C__. Đoạn chương trình s
 
 ## Kết nối STM32F429 với module cảm biến
 
+|| Dev Kit STM32F429zIT6-DISC1| Module OLED 1"3|
+|--|--|--|
+| CN3 | GND | GND |
+| CN3 | 3v3, hoặc 5v | Vcc |
+| CN3 | PA8 | SCL |
+| CN3 | PC9 | SDA |
+
+Vị trí CN3:\
+![alt text](./assets/CN3.png)
+
 ## Cách lắp màn hình Oled vào Dev Kit STM32F429zIT-DISC1
 
-Góc nhìn ngang: ![Góc nhìn ngang](./assets/CN2Horizontal.png) ![Góc nhìn ngang](./assets/CN2Horizontal2.png)\
-Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN2topview.png)
+Góc nhìn ngang: ![Góc nhìn ngang](./assets/CN3Horizontal.png) ![Góc nhìn ngang](./assets/CN3Horizontal2.png)\
+Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN3topview.png)
 
 ## Các bước lập trình
 
@@ -19,7 +29,7 @@ Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN2topview.png)
     ![RCC Enable](./assets/RCCEnable.png)
    - Thiết lập __CPU Clock = 180MHz__.\
     ![Thiết lập CPU Clock](./assets/ClockConfigration.png)
-3. Vẫn ở file __.ioc__, kích hoạt drive điều khiển I2C. Cụ thể ở đây là __I2C3__ vì được nối thêm với cổng __CN2__ trên board kit, bên cạnh 2 dải chân pin __P1, P2__.\
+3. Vẫn ở file __.ioc__, kích hoạt drive điều khiển I2C. Cụ thể ở đây là __I2C3__ vì được nối thêm với cổng __CN3__ trên board kit, bên cạnh 2 dải chân pin __P1, P2__.\
     ![alt text](./assets/I2C3Enable.png)
 4. Trong phần __Parameter Settings__, cấu hình tốc độ của I2C
     ![cấu hình tốc độ của I2C](./assets/I2CParameters.png)
@@ -51,4 +61,7 @@ Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN2topview.png)
 
 ## Kết quả
 
+- Kết nối qua cổng CN3 với điện áp cấp 3v \
   ![alt text](./assets/text_on_oled.png)
+- Kết nối qua hàng chân P1 với điện áp cấp 5v \
+  ![P1](./assets/text_on_oled.p1.png)

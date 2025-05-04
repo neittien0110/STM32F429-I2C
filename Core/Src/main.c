@@ -21,7 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "sh1106.h"  // Thư viện được bổ sung thêm để điều khiển màn hình OLED 1.3"
+#include "string.h"  // Thư viện string.h để sử dụng hàm strlen()
+#include "stdio.h"   // Thư viện stdio.h để sử dụng hàm sprintf()
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,6 +92,13 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
+  SH1106_Init();       		     // Khởi tạo màn hình OLED với Driver SSH1106
+  char buf[100];		         // Chuẩn bị chuỗi hiển thị
+  sprintf(buf, "%s", "Hello TN66");
+  SH1106_GotoXY(12, 10);         // Di chuyển tới vị trí (điểm ảnh) để từ đó bắt đầu vẽ
+  SH1106_Puts(buf, &Font_11x18, SH1106_COLOR_WHITE); //Đưa chuỗi lên màn hình
+  //SH1106_ToggleInvert();		 // Đảo ngược màu
+  SH1106_UpdateScreen();		 // Cập nhật tất cả thay đổi nói trên lên màn hình. Chú ý rằng các bước chuẩn bị trên chỉ đưa các điểm ảnh vào vùng đệm màn hình chứ chưa thực sự active vùng đệm đó.
 
   /* USER CODE END 2 */
 

@@ -24,5 +24,31 @@ Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN2topview.png)
 4. Trong phần __Parameter Settings__, cấu hình tốc độ của I2C
     ![cấu hình tốc độ của I2C](./assets/I2CParameters.png)
 5. Thêm các file sh1106.* và fonts.* vào project.
+6. Thêm các mã nguồn vào file __main.c__
+    - Khai báo thư viện cần thiết.
+
+        ```C
+        /* USER CODE BEGIN Includes */
+        #include "sh1106.h"  // Thư viện được bổ sung thêm để điều khiển màn hình OLED 1.3"
+        #include "string.h"  // Thư viện string.h để sử dụng hàm strlen()
+        #include "stdio.h"   // Thư viện stdio.h để sử dụng hàm sprintf()
+        /* USER CODE END Includes */
+        ```
+
+    - Và các lệnh để hiển thị lên màn hình __oled__
+
+        ```C
+        /* USER CODE BEGIN 2 */
+        SH1106_Init();       		     // Khởi tạo màn hình OLED với Driver SSH1106
+        char buf[100];		         // Chuẩn bị chuỗi hiển thị
+        sprintf(buf, "%s", "Hello TN66");
+        SH1106_GotoXY(12, 10);         // Di chuyển tới vị trí (điểm ảnh) để từ đó bắt đầu vẽ
+        SH1106_Puts(buf, &Font_11x18, SH1106_COLOR_WHITE); //Đưa chuỗi lên màn hình
+        SH1106_UpdateScreen();		 // Cập nhật tất cả thay đổi nói trên lên màn hình. 
+                                    // Chú ý rằng các bước chuẩn bị trên chỉ đưa các điểm ảnh vào vùng đệm màn hình chứ chưa thực sự active vùng đệm đó.
+        /* USER CODE END 2 */
+        ```
 
 ## Kết quả
+
+  ![alt text](./assets/text_on_oled.png)

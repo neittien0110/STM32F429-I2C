@@ -1,6 +1,8 @@
 # GIAO TIẾP I2C
 
 STM32 có sẵn __3 bộ driver điều khiển I2C__. Đoạn chương trình sau minh họa hiển thị ra màn hình OLED 1"3 qua giao tiếp I2C.
+\
+> Nội dung trong học phần Hệ nhúng, phần __Ghép nối STM32F429 với OLED SH1106__
 
 ## Kết nối STM32F429 với module cảm biến
 
@@ -21,6 +23,6 @@ Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN2topview.png)
     ![alt text](./assets/I2C3Enable.png)
 4. Trong phần __Parameter Settings__, cấu hình tốc độ của I2C
     ![cấu hình tốc độ của I2C](./assets/I2CParameters.png)
-5.
+5. Thêm các file sh1106.* và fonts.* vào project.
 
 ## Kết quả

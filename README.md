@@ -6,6 +6,11 @@ STM32 có sẵn __3 bộ driver điều khiển I2C__. Đoạn chương trình s
 
 ## Các bước lập trình
 
-1. Tạo dự án mới
+1. Tạo dự án mới.
+2. Thiết lập xung nhịp đồng hồ CPU clock rate ở 180 MHz với 2 bước cấu hình như trong ảnh.
+   - Kích hoạt RCC.\
+    ![RCC Enable](./assets/RCCEnable.png)
+   - Thiết lập CPU Clock.\
+    ![Thiết lập CPU Clock](./assets/ClockConfigration.png)
 
 ## Kết quả

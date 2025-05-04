@@ -17,7 +17,10 @@ Góc nhìn trên-xuống: ![Góc nhìn trên-xuống](./assets/CN2topview.png)
     ![RCC Enable](./assets/RCCEnable.png)
    - Thiết lập __CPU Clock = 180MHz__.\
     ![Thiết lập CPU Clock](./assets/ClockConfigration.png)
-3. Vẫn ở file __.ioc__, kích hoạt drive điều khiển I2C. Cụ thể ở đây là __I2C3__ vì được nối thêm với cổng __CN2__ trên board kit, bên cạnh 2 dải chân pin __P1, P2__
+3. Vẫn ở file __.ioc__, kích hoạt drive điều khiển I2C. Cụ thể ở đây là __I2C3__ vì được nối thêm với cổng __CN2__ trên board kit, bên cạnh 2 dải chân pin __P1, P2__.\
     ![alt text](./assets/I2C3Enable.png)
+4. Trong phần __Parameter Settings__, cấu hình tốc độ của I2C
+    ![cấu hình tốc độ của I2C](./assets/I2CParameters.png)
+5.
 
 ## Kết quả
